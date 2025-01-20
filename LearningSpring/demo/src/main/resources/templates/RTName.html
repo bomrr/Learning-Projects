@@ -1,0 +1,53 @@
+<!--
+Shamelessly AI generated random name generator for RTGame.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Name Generator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://static-cdn.jtvnw.net/jtv_user_pictures/91110ab6-9495-4e4c-86c5-ec9933696106-profile_banner-480.png');
+            background-size: cover;
+            background-position: center;
+        }
+        #name {
+            font-size: 3em;
+            font-weight: bold;
+            font-family: "Impact", sans-serif;
+            color: white;
+            text-shadow: 4px 4px 0 #000, -4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="location.href='/'" style="position: absolute; top: 10px; left: 10px;">Home</button>
+    <div id="name">Loading...</div>
+
+    <script>
+        const rWords = ["Rambunctious", "Ridiculous", "Ravenous", "Raspy", "Roly-Poly", "Raging", "Raucous", "Razzle-Dazzle", "Rinky-Dink", "Rowdy", "Rambunctious", "Raucous", "Razzmatazz", "Rinky-Dink", "Raucous", "Rambunctious", "Razzle-Dazzle", "Rinky-Dink", "Raucous", "Rambunctious"];
+        const tWords = ["Taco", "Trombone", "Tarantula", "Toaster", "Tutu", "Tyrannosaurus", "Tiddlywinks", "Tater-Tot", "Teapot", "Trombone", "Taco", "Trombone", "Tarantula", "Toaster", "Tutu", "Tyrannosaurus", "Tiddlywinks", "Tater-Tot", "Teapot", "Trombone"];
+
+        function getRandomWord(words) {
+            return words[Math.floor(Math.random() * words.length)];
+        }
+
+        function generateName() {
+            const rWord = getRandomWord(rWords);
+            const tWord = getRandomWord(tWords);
+            return `${rWord} ${tWord} Games`;
+        }
+
+        document.getElementById('name').innerText = generateName();
+    </script>
+</body>
+</html>

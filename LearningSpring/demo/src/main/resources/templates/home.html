@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <link rel="stylesheet" href="/styles.css">
+<head>
+    <title>Home</title>
+</head>
+<body>
+
+    <!-- Display success message if present -->
+    <div th:if="${message}" th:text="${message}" style="color: green;"></div>
+
+    <!-- Button that brings the user to the RTName.html page in templates -->
+    <button onclick="location.href='/rtgame'">Go to New Page</button>
+
+    <!-- Form to submit data to the server -->
+    <h1>Submit Data to the Server</h1>
+    <form action="/submit" method="post">
+        <label for="inputText">Enter something:</label>
+        <input type="text" id="inputText" name="inputText" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h1>Delete Data from the Server</h1>
+    <form action="/delete" method="post">
+        <label for="deleteText">Enter something to delete:</label>
+        <input type="text" id="deleteText" name="deleteText" required>
+        <button type="submit">Delete</button>
+    </form>
+
+    <!-- Display all data in the database -->
+    <h1>Everything in the database:</h1>
+    <ul>
+        <li th:each="data : ${dataList}" th:text="${data}"></li>
+    </ul>
+
+</body>
+</html>

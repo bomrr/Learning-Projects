@@ -1,0 +1,2 @@
+Demo is a simple application with note-like comments for learning purposes. It has no real function besides learning the basics of the Spring framework.
+
